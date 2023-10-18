@@ -206,8 +206,10 @@ allTasks.onclick = () => {
 
 
 function editTask(idx){
+    // Prompt user to enter edit task
     let updatedTask = prompt("Enter the update");
 
+    // Fetching the array in browser storage
     var todoList = JSON.parse(localStorage.getItem('todo-list'));
 
     if(todoList == null){
@@ -215,6 +217,8 @@ function editTask(idx){
     }
 
     todoList[idx].name = updatedTask;
+    
+    // Setting the updated local Storege 
     localStorage.setItem("todo-list", JSON.stringify(todoList) );
     showTasks('all');
 }
