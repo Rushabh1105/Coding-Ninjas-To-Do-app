@@ -174,6 +174,7 @@ function updateStatus(idx){
     
     // Setting the updated local Storege 
     localStorage.setItem("todo-list", JSON.stringify(todoList) );
+    showTasks('all')
 } 
 
 // This function shows the Pending tasks in list
