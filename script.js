@@ -134,7 +134,16 @@ function deleteTask(idx) {
 
 // This Function Complete all tasks and removes from the storage
 completeall.onclick = () => {
-    var todoList = [];
+    var todoList = JSON.parse(localStorage.getItem('todo-list'));
+
+    if(todoList == null){
+        return;
+    }
+
+    // Update the status of each element in list
+    todoList.forEach( (elem) => {
+        elem.status = 'Complete';
+    })
 
     // Setting the updated local Storege 
     localStorage.setItem("todo-list", JSON.stringify(todoList) );
@@ -217,7 +226,7 @@ function editTask(idx){
     }
 
     todoList[idx].name = updatedTask;
-    
+
     // Setting the updated local Storege 
     localStorage.setItem("todo-list", JSON.stringify(todoList) );
     showTasks('all');
