@@ -1,0 +1,179 @@
+
+
+/*  ---------------Styles for Body----------------- */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(33, 187, 214);
+}
+
+
+/* -------------- Style For To-Do Card -------------- */
+
+.card{
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    margin: 20vh auto;
+    border-radius: 2%;
+    overflow: hidden;
+}
+
+/*  ----    Card Header ---- */
+
+.card-header{
+    text-align: center;
+    display: flex;
+}
+
+.card-header h2{
+    margin: 10px auto;
+}
+/*  Separator */
+.separator{
+    margin: auto;
+    width: 90%;
+}
+
+
+/* --- Card Input --- */
+
+.card-input{
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2rem;
+}
+
+.card-input input{
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgb(145, 120, 120);
+    outline: none;
+    padding: 0 0 0 45px;
+    margin: 0 -40px;
+    font-size: 1.1rem;
+}
+
+.card-input i {
+    padding: 10px;
+    z-index: 1;
+    color: rgb(145, 120, 120);
+}
+
+#submit{
+    display: none;
+}
+
+
+
+/*  ----Upper Control ---- */
+
+.controls-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px auto;
+    cursor: pointer;
+    color: rgb(145, 120, 120);
+}
+
+.controls-1 span{
+    padding: 2px 2px;
+}
+
+.controls-1 span:hover{
+    color: black;
+    border: 1px solid black;
+    box-shadow: 1px 1px 0px;
+}
+
+
+/* ---- Task Box ---- */
+.tasks{
+    margin:  25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.task{
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    margin: 7px 5px;
+    padding: 5px;
+    padding-left: 20px;
+    font-size: 20px;
+    height: 30;
+    display: flex;
+    flex-direction: row;
+    word-break: break-all;
+}
+
+.task:hover{
+    border: 1px solid black;
+}
+
+.remove i{
+    position: absolute;
+    right: 10px;
+    padding-right: 10px;
+    color: rgb(145, 120, 120);
+}
+
+.remove i:hover{
+    color: black;
+    cursor: pointer;
+}
+
+
+.clear i:nth-child(2){
+    padding-left: 10px;
+}
+
+.checked{
+    color: red;
+}
+
+.complete{
+    text-decoration: line-through;
+}
+/*  Lower Controls    */
+
+.lower-controls{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 1rem;
+    margin: 10px 40px;
+}
+
+.lower-controls p{
+    font-size: 0.8rem;
+    width: 50%;
+}
+
+.lower-controls span{
+    cursor: pointer;
+    margin: 0 10px;
+    padding: 1px 1px;
+    color: rgb(145, 120, 120);
+}
+
+.lower-controls span:hover{
+    color: black;
+    border: 1px solid black;
+    box-shadow: 1px 1px 0px;
+}
+
+.pending-task{
+    font-size: 15px;
+    color: black;
+}
