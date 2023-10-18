@@ -8,6 +8,7 @@ const allTasks = document.querySelector('#all');
 const uncomplete = document.querySelector('#uncomplete');
 const complete = document.querySelector('#complete');
 const pendingTask = document.querySelector('.pending-task');
+const edit = document.querySelector('.edit');
 
 
 // This function invokes views the page with the tasks that are currently
@@ -101,6 +102,7 @@ function showTasks(filter){
                             <span class="${isComplete}">${elem.name}</span>
                         </label>
                         <span class="remove">
+                            <i class="edit fa-solid fa-pen-to-square" onclick="editTask(${idx})"></i>
                             <i class="fa-solid fa-xmark" onclick="deleteTask(${idx})"></i>
                         <span>
                     </li>`
@@ -170,7 +172,12 @@ function updateStatus(idx){
     if(todoList == null){
         return;
     }
-    todoList[idx].status = "Complete";
+    
+    if(todoList[idx].status == "Complete"){
+        todoList[idx].status = "Pending";
+    }else{
+        todoList[idx].status = "Complete";
+    }
     
     // Setting the updated local Storege 
     localStorage.setItem("todo-list", JSON.stringify(todoList) );
@@ -194,5 +201,20 @@ complete.onclick = () => {
 // This function shows the all tasks in list
 allTasks.onclick = () => {
     // Pass status as 'all' to the showTask function
+    showTasks('all');
+}
+
+
+function editTask(idx){
+    let updatedTask = prompt("Enter the update");
+
+    var todoList = JSON.parse(localStorage.getItem('todo-list'));
+
+    if(todoList == null){
+        return;
+    }
+
+    todoList[idx].name = updatedTask;
+    localStorage.setItem("todo-list", JSON.stringify(todoList) );
     showTasks('all');
 }
